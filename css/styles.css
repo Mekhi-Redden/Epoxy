@@ -1,0 +1,340 @@
+/* Smooth scrolling for page navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base body styling */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #e6e6e6;
+  color: #ffffff;
+  transition: 0.4s;
+  font-size: 18px;
+}
+
+/* Dark mode */
+body.dark {
+  background: #111;
+  color: #eee;
+}
+
+/* Navigation bar */
+.nav {
+  background: #000;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* Section spacing */
+.section {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+/* Center entire page */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Portfolio layout */
+.portfolio {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Image card */
+.img-wrap {
+  position: relative;
+  display: inline-block;
+  background: #000;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+/* Image styling */
+.img-wrap img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Buttons */
+button {
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Plaque overlay */
+.plaque {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: #000;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 6px;
+
+  text-align: center;
+  width: 80%;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Plaque text */
+.plaque .title {
+  font-size: 13px;
+  margin: 0;
+}
+
+.plaque .price {
+  font-size: 12px;
+  margin: 2px 0 6px 0;
+  color: #ccc;
+}
+
+/* Plaque button */
+.plaque-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 4px 8px;
+  font-size: 11px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Overlay content */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+
+  opacity: 0;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+
+/* Show overlay on hover */
+.img-wrap:hover .overlay {
+  opacity: 1;
+}
+
+/* Form container */
+.form-box {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode */
+body.dark .form-box {
+  background: #1a1a1a;
+}
+
+/* Inputs */
+.form-box input {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Button */
+.form-box button {
+  background: #000;
+  color: #fff;
+  border-radius: 6px;
+}
+
+/* Dark mode inputs */
+body.dark .form-box input {
+  background: #222;
+  color: #fff;
+}
+
+/* Floating label container */
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+/* Input */
+.input-group input {
+  width: 100%;
+  padding: 14px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Label */
+.input-group label {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+  font-size: 14px;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+/* When typing or focused */
+.input-group input:focus + label,
+.input-group input:valid + label {
+  top: -8px;
+  left: 8px;
+  font-size: 11px;
+  color: #000;
+  background: #fff;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+/* Dark mode */
+body.dark .input-group input {
+  background: #222;
+  color: #fff;
+}
+
+body.dark .input-group label {
+  color: #aaa;
+}
+
+body.dark .input-group input:focus + label,
+body.dark .input-group input:valid + label {
+  color: #fff;
+  background: #111;
+}
+
+/* Center auth pages */
+.auth-section {
+  min-height: 80vh; /* fills most of screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* fills entire screen */
+}
+
+.overlay button {
+  background: red;
+  color: white;
+}
+
+.overlay .owner {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+.checkout-item {
+  gap: 12px;
+}
+
+.checkout-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+}
+
+/* LEFT BRAND */
+.nav-brand a {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* RIGHT LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px; /* spacing between links */
+}
+
+/* ALL LINKS SAME SIZE */
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  min-width: 80px; /* makes all same size feel */
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+/* HOVER EFFECT */
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* BADGES */
+.badge {
+  margin-left: 6px;
+  background: red;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+/* ADMIN LINK SPECIAL */
+.admin-link {
+  background: rgba(255, 165, 0, 0.15);
+}
